@@ -1,5 +1,5 @@
-import React from 'react'
 import ComingSoon from './ComingSoon'
+import './index.css'
 
 function App() {
   return <ComingSoon />
