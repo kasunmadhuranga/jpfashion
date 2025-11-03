@@ -18,15 +18,15 @@ const ComingSoon: React.FC = () => {
   }
 
   const images = [
-    '/src/assets/grid-view/474581413_629309472885166_5344410509555292510_n.jpg',
-    '/src/assets/grid-view/474745541_629304356219011_8383925119962198929_n.jpg',
-    '/src/assets/grid-view/487549746_689835843559885_4846915069271499123_n.jpg',
-    '/src/assets/grid-view/487886335_689835423559927_1105927186176174643_n.jpg',
-    '/src/assets/grid-view/503563474_736885608854908_4835939213272009089_n.jpg',
-    '/src/assets/grid-view/517594801_766075272602608_8216639341401445011_n.jpg',
-    '/src/assets/grid-view/517704565_766075209269281_1190333363071007838_n.jpg',
-    '/src/assets/grid-view/557729700_835517365658398_1346972867897369949_n.jpg',
-    '/src/assets/grid-view/558091748_835517492325052_5375433594120132772_n.jpg'
+    '/assets/grid-view/474581413_629309472885166_5344410509555292510_n.jpg',
+    '/assets/grid-view/474745541_629304356219011_8383925119962198929_n.jpg',
+    '/assets/grid-view/487549746_689835843559885_4846915069271499123_n.jpg',
+    '/assets/grid-view/487886335_689835423559927_1105927186176174643_n.jpg',
+    '/assets/grid-view/503563474_736885608854908_4835939213272009089_n.jpg',
+    '/assets/grid-view/517594801_766075272602608_8216639341401445011_n.jpg',
+    '/assets/grid-view/517704565_766075209269281_1190333363071007838_n.jpg',
+    '/assets/grid-view/557729700_835517365658398_1346972867897369949_n.jpg',
+    '/assets/grid-view/558091748_835517492325052_5375433594120132772_n.jpg'
   ]
 
   useEffect(() => {
@@ -40,7 +40,7 @@ const ComingSoon: React.FC = () => {
       <div 
         className="absolute inset-0 bg-cover bg-center opacity-30"
         style={{
-          backgroundImage: 'url(/src/assets/banner.jpg)',
+          backgroundImage: 'url(/assets/banner.jpg)',
           transform: `translateY(${scrollY * 0.5}px)`,
           transition: 'transform 0.1s ease-out'
         }}
@@ -50,7 +50,7 @@ const ComingSoon: React.FC = () => {
       <div className="relative backdrop-blur-xl bg-white/10 border border-white/20 rounded-3xl p-6 md:p-10 text-center shadow-2xl max-w-4xl w-full animate-fade-in">
         <div className="mb-8">
           <div className="w-24 h-24 md:w-32 md:h-32 mx-auto mb-6 rounded-full flex items-center justify-center shadow-lg animate-bounce-slow overflow-hidden bg-white">
-            <img src="/src/assets/logo.jpg" alt="JP Fashion Logo" className="w-full h-full object-cover" />
+            <img src="/assets/logo.jpg" alt="JP Fashion Logo" className="w-full h-full object-cover" />
           </div>
           <h1 className="text-3xl md:text-5xl font-bold text-white mb-2 animate-slide-down">JP Fashion</h1>
           <div className="text-lg md:text-xl text-white/90">Online Dress Shopping</div>
