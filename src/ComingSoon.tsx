@@ -7,17 +7,26 @@ const ComingSoon: React.FC = () => {
 
   const nextImage = () => {
     if (selectedImageIndex !== null) {
-      setSelectedImageIndex((selectedImageIndex + 1) % images.length)
+      setSelectedImageIndex((selectedImageIndex + 1) % (images.length + additionalImages.length))
     }
   }
 
   const prevImage = () => {
     if (selectedImageIndex !== null) {
-      setSelectedImageIndex((selectedImageIndex - 1 + images.length) % images.length)
+      setSelectedImageIndex((selectedImageIndex - 1 + images.length + additionalImages.length) % (images.length + additionalImages.length))
     }
   }
 
   const images = [
+    '/assets/bangkok/bangkok-net-skirt-1.JPG',
+    '/assets/bangkok/bangkok-net-skirt-2.JPG',
+    '/assets/bangkok/bangkok-net-skirt-3.JPG',
+    '/assets/bangkok/bangkok-net-skirt-4.JPG',
+    '/assets/bangkok/bangkok-net-skirt-5.JPG',
+    '/assets/bangkok/bangkok-net-skirt-6.JPG'
+  ]
+
+  const additionalImages = [
     '/assets/grid-view/474581413_629309472885166_5344410509555292510_n.jpg',
     '/assets/grid-view/474745541_629304356219011_8383925119962198929_n.jpg',
     '/assets/grid-view/487549746_689835843559885_4846915069271499123_n.jpg',
@@ -66,11 +75,23 @@ const ComingSoon: React.FC = () => {
 
         <section className="mb-8">
           <h2 className="text-2xl md:text-3xl font-bold text-white mb-6">Shop at JP Fashion</h2>
-          <div className="grid grid-cols-3 md:grid-cols-3 gap-3 md:gap-4 items-start">
+          <div className="grid grid-cols-2 min-[640px]:grid-cols-3 gap-3 md:gap-4 items-start">
             {images.map((img, idx) => (
               <div
                 key={idx}
                 onClick={() => setSelectedImageIndex(idx)}
+                className="backdrop-blur-md bg-white/10 border border-white/20 rounded-2xl overflow-hidden cursor-pointer hover:scale-105 transition-all duration-300 hover:shadow-2xl"
+              >
+                <img src={img} alt={`JP Fashion product ${idx + 1}`} className="w-full h-64 md:h-80 object-cover object-center" loading="lazy" />
+              </div>
+            ))}
+          </div>
+
+          <div className="grid grid-cols-3 md:grid-cols-3 gap-3 md:gap-4 items-start mt-4">
+            {additionalImages.map((img, idx) => (
+              <div
+                key={idx}
+                onClick={() => setSelectedImageIndex(images.length + idx)}
                 className="backdrop-blur-md bg-white/10 border border-white/20 rounded-2xl overflow-hidden cursor-pointer hover:scale-105 transition-all duration-300 hover:shadow-2xl"
               >
                 <img src={img} alt={`JP Fashion clothing collection ${idx + 1}`} className="w-full h-48 md:h-64 object-cover object-top" loading="lazy" />
@@ -115,6 +136,21 @@ const ComingSoon: React.FC = () => {
           </div>
         </section>
         
+        <section className="mb-8">
+          <h2 className="text-2xl md:text-3xl font-bold text-white my-6">Follow Us on Facebook</h2>
+          <div className="rounded-2xl overflow-hidden shadow-2xl border border-white/20 flex justify-center">
+            <iframe 
+              src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fjptextilesl&tabs=timeline&width=500&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId"
+              className="w-full h-[500px] md:max-w-[500px] md:mx-auto"
+              style={{ border: 'none', overflow: 'hidden' }}
+              scrolling="no"
+              frameBorder="0"
+              allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+              title="JP Fashion Facebook Page">
+            </iframe>
+          </div>
+        </section>
+        
         <footer className="mt-6 text-white/70 text-sm">
           © 2025 JP Fashion, All Rights Reserved
         </footer>
@@ -153,7 +189,7 @@ const ComingSoon: React.FC = () => {
           </button>
           
           <img
-            src={images[selectedImageIndex]}
+            src={selectedImageIndex < images.length ? images[selectedImageIndex] : additionalImages[selectedImageIndex - images.length]}
             alt="Full screen"
             className="max-w-full max-h-full object-contain rounded-2xl"
             onClick={(e) => e.stopPropagation()}
