@@ -57,7 +57,7 @@ const ComingSoon: React.FC = () => {
         </header>
         
         <section className="mb-8">
-          <h2 className="text-2xl md:text-4xl font-bold bg-gradient-to-r from-[#fcc611] to-[#fe0000] bg-clip-text text-transparent mb-6 animate-pulse-slow">Coming Soon Coming Soon</h2>
+          <h2 className="text-2xl md:text-4xl font-bold bg-gradient-to-r from-[#fcc611] to-[#fe0000] bg-clip-text text-transparent mb-6 animate-pulse-slow">Coming Soon</h2>
           <p className="text-base md:text-lg text-white/90 leading-relaxed mb-6 max-w-2xl mx-auto">
             Ladies, gents and kids clothing, bags, shoes and accessories, lifestyle, home appliances.
             Quality products, affordable prices, under one roof!
